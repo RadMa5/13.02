@@ -5,9 +5,8 @@ import os
 class Notes:
     id = 1
     
-
     def write(head: str, body: str):
-        if os.stat("data.csv").st_size != 0:
+        if os.stat("data.csv").st_size != 0: #sets the id counter
             with open("data.csv", "r", newline = "") as data:
                 fields = ["id", "head", "body", "date"]
                 reader = csv.DictReader(data, fieldnames= fields)
